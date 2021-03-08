@@ -1,46 +1,83 @@
+html{
+    font-family: 'DotGothic16', sans-serif;
+}
 
-.card 
-{
+body{
+    height: 100vh;
+    background-image: url('/bilder/background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header{
+    color: white;
+    font-size: 1vw;
+    text-align: center;
+}
+
+.card {
 width: 6vw;
 height: 8vw;
-background-color: black;
-margin: 1vw;
+position: relative;
+transform: scale(1);
+transform-style: preserve-3d;
+transition: .5s;
+border: 0.4vw solid steelblue;
+}
+
+.back, .front{
+    width: 6vw;
+    height: 8vw;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front{
+    transform: rotateY(180deg);
 }
 
 .card-container
 {
     display: grid;
-    grid-template-columns: 10vw 10vw 10vw 10vw;
-    grid-template-rows: 12vw 12vw 12vw;
+    grid-template-columns: 10vw 10vw 10vw 10vw ;
+    grid-template-rows: 10vw 10vw 10vw 10vw;
     justify-content: center;
+    padding: 1vw;
 }
 
-.card.flip[value = "0"]
-{
-    background-color: blue;
+.card:active{
+    transform: scale(.97);
+    transition: transform .2;
 }
 
-.card.flip[value = "1"]
-{
-    background-color: pink;
+.card.flip{
+    transform: rotateY(180deg);
 }
 
-.card.flip[value = "2"]
-{
-    background-color: green;
+@media only screen and (max-width: 800px) {
+    h1,h2{
+        font-size: 10vw;
+    }
+
+    p{
+        font-size: 5vw;
+
+    }
+    .card-container{
+        display: grid;
+        grid-template-columns: 20vw 20vw 20vw 20vw ;
+        grid-template-rows: 25vw 25vw 25vw 25vw;
+        justify-content: center;
+    }
+
+    .card, .front, .back{
+        width: 15vw;
+        height: 20vw;
+    }
 }
 
-.card.flip[value = "3"]
-{
-    background-color: yellow;
-}
-
-.card.flip[value = "4"]
-{
-    background-color: red;
-}
-
-.card.flip[value = "5"]
-{
-    background-color: purple;
+footer{
+    color: white;
+    font-size: 1vw;
+    text-align: center;
 }
