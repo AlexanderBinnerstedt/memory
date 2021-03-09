@@ -4,7 +4,7 @@ html{
 
 body{
     height: 100vh;
-    background-image: url('./bilder/background.jpg');
+    background: linear-gradient(to bottom, #000000 0%, #0033cc 100%);
     background-size: cover;
     background-attachment: fixed;
 }
